@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Food, LLC Menu</title>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Food, LLC</a>
+
+        <button type="button" class="navbar-toggle collapsed visible-xs" data-toggle="collapse" data-target="#collapsable-nav">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+
+      <div id="collapsable-nav" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#" data-target="#collapseChicken" class="accordion-toggle">Chicken</a></li>
+          <li><a href="#" data-target="#collapseBeef" class="accordion-toggle">Beef</a></li>
+          <li><a href="#" data-target="#collapseSushi" class="accordion-toggle">Sushi</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="text-center">Our Menu</h1>
+  </div>
+
+
+
+
+  <div class="container">
+    <div class="panel-group" id="menu-accordion">
+
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#menu-accordion" href="#collapseChicken">
+              Chicken
+            </a>
+          </h4>
+        </div>
+        <div id="collapseChicken" class="panel-collapse collapse">
+          <div class="panel-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Chicken section content.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#menu-accordion" href="#collapseBeef">
+              Beef
+            </a>
+          </h4>
+        </div>
+        <div id="collapseBeef" class="panel-collapse collapse">
+          <div class="panel-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Beef section content.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#menu-accordion" href="#collapseSushi">
+              Sushi
+            </a>
+          </h4>
+        </div>
+        <div id="collapseSushi" class="panel-collapse collapse">
+          <div class="panel-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sushi section content.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ 
+  <script>
+    $(document).ready(function() {
+      $(".accordion-toggle").click(function(e){
+        e.preventDefault();
+        var target = $(this).data("target");
+        $(target).collapse('toggle');
+      });
+    });
+  </script>
+
+</body>
+</html>
