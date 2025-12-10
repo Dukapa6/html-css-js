@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurant Random Specials</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .tile {
+      display: inline-block;
+      padding: 20px;
+      margin: 10px;
+      background: #ddd;
+      cursor: pointer;
+      text-align: center;
+      width: 150px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Restaurant</h1>
+
+<div id="home">
+  <div class="tile" onclick="showMenu('menu')">Menu</div>
+  <div class="tile" onclick="loadRandomSpecial()">Specials</div>
+  <div class="tile" onclick="showMenu('map')">Map</div>
+</div>
+
+<div id="main-content"></div>
+
+<script>
+
+  const categories = [
+    { short_name: "L", name: "Lunch" },
+    { short_name: "D", name: "Dinner" },
+    { short_name: "S", name: "Sushi" },
+    { short_name: "A", name: "Appetizers" }
+  ];
+
+  function showMenu(type) {
+    document.getElementById("main-content").innerHTML =
+      "<h2>You clicked: " + type + "</h2>";
+  }
+
+
+  function loadMenuItems(categoryShortName) {
+    document.getElementById("main-content").innerHTML =
+      "<h2>Random Category: " + categoryShortName + "</h2>";
+  }
+
+
+  function loadRandomSpecial() {
+    const randomIndex = Math.floor(Math.random() * categories.length);
+    const randomCategory = categories[randomIndex].short_name;
+    loadMenuItems(randomCategory);
+  }
+</script>
+
+</body>
+</html>
